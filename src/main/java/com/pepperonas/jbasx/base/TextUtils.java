@@ -17,6 +17,8 @@
 package com.pepperonas.jbasx.base;
 
 /**
+ * The type Text utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class TextUtils {

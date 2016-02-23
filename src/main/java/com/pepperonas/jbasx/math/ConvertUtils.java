@@ -19,6 +19,8 @@ package com.pepperonas.jbasx.math;
 import com.pepperonas.jbasx.base.Constants;
 
 /**
+ * The type Convert utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ConvertUtils {

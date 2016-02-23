@@ -17,17 +17,43 @@
 package com.pepperonas.jbasx.base;
 
 /**
+ * The type Binary.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class Binary {
 
+    /**
+     * The constant YOTTA.
+     */
     public static double YOTTA = Math.pow(1024, 8);
+    /**
+     * The constant ZETTA.
+     */
     public static double ZETTA = Math.pow(1024, 7);
+    /**
+     * The constant EXA.
+     */
     public static double EXA = Math.pow(1024, 6);
+    /**
+     * The constant PETA.
+     */
     public static double PETA = Math.pow(1024, 5);
+    /**
+     * The constant TERA.
+     */
     public static double TERA = Math.pow(1024, 4);
+    /**
+     * The constant GIGA.
+     */
     public static double GIGA = Math.pow(1024, 3);
+    /**
+     * The constant MEGA.
+     */
     public static double MEGA = Math.pow(1024, 2);
+    /**
+     * The constant KILO.
+     */
     public static double KILO = Math.pow(1024, 1);
 
 }

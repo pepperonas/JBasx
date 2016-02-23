@@ -22,15 +22,29 @@ import java.io.File;
 import java.text.DecimalFormat;
 
 /**
+ * The type File size utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class FileSizeUtils {
 
     private static final String TAG = "FileSizeUtils";
 
+    /**
+     * The constant KB.
+     */
     public static final int KB = 0;
+    /**
+     * The constant MB.
+     */
     public static final int MB = 1;
+    /**
+     * The constant GB.
+     */
     public static final int GB = 2;
+    /**
+     * The constant TB.
+     */
     public static final int TB = 3;
 
 

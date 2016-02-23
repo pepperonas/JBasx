@@ -25,6 +25,8 @@ import org.junit.Test;
 import java.util.Date;
 
 /**
+ * The type Time format utils test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class TimeFormatUtilsTest {
@@ -32,6 +34,11 @@ public class TimeFormatUtilsTest {
     private static final String TAG = "TimeFormatUtilsTest";
 
 
+    /**
+     * Test utc to local.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testUtcToLocal() throws Exception {
         String s = TimeFormatUtils.utcToLocal(new Date(1449919103945L));
@@ -40,6 +47,11 @@ public class TimeFormatUtilsTest {
     }
 
 
+    /**
+     * Test get timestamp lexical.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetTimestampLexical() throws Exception {
         /*will fail if year >= 2100*/
@@ -53,6 +65,11 @@ public class TimeFormatUtilsTest {
     }
 
 
+    /**
+     * Test get timestamp.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetTimestamp() throws Exception {
         /*will fail if year >= 2100*/
@@ -70,6 +87,11 @@ public class TimeFormatUtilsTest {
     }
 
 
+    /**
+     * Test get timestamp millis.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetTimestampMillis() throws Exception {
         /*will fail if year >= 2100*/
@@ -79,6 +101,11 @@ public class TimeFormatUtilsTest {
     }
 
 
+    /**
+     * Test get daytime.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testGetDaytime() throws Exception {
         TimeFormatUtils.Daytime daytime = TimeFormatUtils.getDaytime();
@@ -90,6 +117,11 @@ public class TimeFormatUtilsTest {
     }
 
 
+    /**
+     * Test to time string.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testToTimeString() throws Exception {
         String timeString = TimeFormatUtils.toTimeString(60L * 60L * 1000L, false, false);

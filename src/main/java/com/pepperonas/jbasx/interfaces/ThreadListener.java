@@ -17,6 +17,8 @@
 package com.pepperonas.jbasx.interfaces;
 
 /**
+ * The interface Thread listener.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public interface ThreadListener {

@@ -20,6 +20,8 @@ import com.pepperonas.jbasx.Jbasx;
 import com.pepperonas.jbasx.log.Log;
 
 /**
+ * The type Xml utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class XmlUtils {

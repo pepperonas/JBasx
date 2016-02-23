@@ -38,6 +38,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The type Io utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class IoUtils {

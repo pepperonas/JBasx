@@ -22,14 +22,25 @@ import com.pepperonas.jbasx.log.Log;
 import java.util.regex.Pattern;
 
 /**
+ * The type Network address utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class NetworkAddressUtils {
 
     private static final String TAG = "NetworkAddressUtils";
 
+    /**
+     * The constant CLASS_C.
+     */
     public static int CLASS_C = 1;
+    /**
+     * The constant CLASS_B.
+     */
     public static int CLASS_B = 2;
+    /**
+     * The constant CLASS_A.
+     */
     public static int CLASS_A = 3;
 
     private static final Pattern IPV4_PATTERN =

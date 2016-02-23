@@ -27,14 +27,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * The type String format utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class StringFormatUtils {
 
     private static final String TAG = "StringFormatUtils";
 
+    /**
+     * The constant regEmail.
+     */
     public static final String regEmail = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+    /**
+     * The constant regCnChar.
+     */
     public static final String regCnChar = "[\u4E00-\u9FFF]+";
+    /**
+     * The constant regIpAddress.
+     */
     public static final String regIpAddress = "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 
 

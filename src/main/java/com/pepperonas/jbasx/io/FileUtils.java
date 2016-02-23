@@ -28,6 +28,8 @@ import java.nio.channels.FileChannel;
 import java.util.Comparator;
 
 /**
+ * The type File utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class FileUtils {
@@ -692,6 +694,9 @@ public class FileUtils {
     }
 
 
+    /**
+     * The type Folder sorter.
+     */
     public static class FolderSorter implements Comparator<File> {
 
         public int compare(File lhs, File rhs) {

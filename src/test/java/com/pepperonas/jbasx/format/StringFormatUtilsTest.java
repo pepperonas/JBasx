@@ -22,6 +22,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * The type String format utils test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class StringFormatUtilsTest {
@@ -29,6 +31,11 @@ public class StringFormatUtilsTest {
     private static final String TAG = "StringFormatUtilsTest";
 
 
+    /**
+     * Test format decimal.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFormatDecimal() throws Exception {
         String s = StringFormatUtils.formatDecimal(200.12345678d, 3);
@@ -37,6 +44,11 @@ public class StringFormatUtilsTest {
     }
 
 
+    /**
+     * Test format decimal force precision.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFormatDecimalForcePrecision() throws Exception {
         String s = StringFormatUtils.formatDecimalForcePrecision(200.123d, 7);
@@ -45,12 +57,22 @@ public class StringFormatUtilsTest {
     }
 
 
+    /**
+     * Test cut text.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testCutText() throws Exception {
 
     }
 
 
+    /**
+     * Test is email.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testIsEmail() throws Exception {
         String email = "pepperonas@gmail.com";
@@ -60,6 +82,11 @@ public class StringFormatUtilsTest {
     }
 
 
+    /**
+     * Test is ip 4 address.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testIsIp4Address() throws Exception {
         String ip = "192.168.178.53";
@@ -69,12 +96,22 @@ public class StringFormatUtilsTest {
     }
 
 
+    /**
+     * Test stringify.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testStringify() throws Exception {
 
     }
 
 
+    /**
+     * Test extract urls.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testExtractUrls() throws Exception {
 

@@ -27,6 +27,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
+ * The type String utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class StringUtils {

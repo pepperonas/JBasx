@@ -27,6 +27,8 @@ import org.junit.Test;
 import java.util.List;
 
 /**
+ * The type Color utils test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ColorUtilsTest {
@@ -34,6 +36,11 @@ public class ColorUtilsTest {
     private static final String TAG = "ColorUtilsTest";
 
 
+    /**
+     * Test convert percent to hex transparency.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testConvertPercentToHexTransparency() throws Exception {
         for (int i = 100; i >= 0; i--) {
@@ -44,6 +51,11 @@ public class ColorUtilsTest {
     }
 
 
+    /**
+     * Test convert percent to integer hex transparency.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testConvertPercentToIntegerHexTransparency() throws Exception {
         for (int i = 0; i <= 100; i++) {
@@ -54,6 +66,11 @@ public class ColorUtilsTest {
     }
 
 
+    /**
+     * Test to int.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testToInt() throws Exception {
         List<String> stringValues = jUtils._stringValues(MaterialColor.class);
@@ -66,6 +83,11 @@ public class ColorUtilsTest {
     }
 
 
+    /**
+     * Test set alpha component.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testSetAlphaComponent() throws Exception {
         for (int i = 0; i < 100; i++) {
@@ -74,6 +96,11 @@ public class ColorUtilsTest {
     }
 
 
+    /**
+     * Test convert brightness to max int.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testConvertBrightnessToMaxInt() throws Exception {
         for (int i = -1; i < 102; i++) {
@@ -84,6 +111,9 @@ public class ColorUtilsTest {
     }
 
 
+    /**
+     * Test set brightness.
+     */
     @Test
     public void testSetBrightness() {
         int value = ColorUtils.setBrightness("0xf57c00", 50);

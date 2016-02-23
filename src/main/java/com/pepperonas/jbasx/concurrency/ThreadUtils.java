@@ -21,6 +21,8 @@ import com.pepperonas.jbasx.interfaces.ThreadListener;
 import java.util.concurrent.Callable;
 
 /**
+ * The type Thread utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ThreadUtils {
@@ -28,6 +30,12 @@ public class ThreadUtils {
     private static final String TAG = "ThreadUtils";
 
 
+    /**
+     * Run in background void.
+     *
+     * @param callable the callable
+     * @return the void
+     */
     public static Void runInBackground(final Callable<Void> callable) {
         new Thread(new Runnable() {
             public void run() {
@@ -42,6 +50,13 @@ public class ThreadUtils {
     }
 
 
+    /**
+     * Calculate string in background void.
+     *
+     * @param threadListener the thread listener
+     * @param callable       the callable
+     * @return the void
+     */
     public static Void calculateStringInBackground(final ThreadListener threadListener, final Callable<String> callable) {
         new Thread(new Runnable() {
             public void run() {

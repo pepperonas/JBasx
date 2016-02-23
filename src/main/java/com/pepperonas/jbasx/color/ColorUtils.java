@@ -19,6 +19,8 @@ package com.pepperonas.jbasx.color;
 import com.pepperonas.jbasx.color.android.ColorXs;
 
 /**
+ * The type Color utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ColorUtils {

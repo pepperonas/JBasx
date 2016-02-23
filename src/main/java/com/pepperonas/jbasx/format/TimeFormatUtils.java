@@ -26,6 +26,8 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
+ * The type Time format utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class TimeFormatUtils {
@@ -33,10 +35,28 @@ public class TimeFormatUtils {
     private static final String TAG = "TimeFormatUtils";
 
 
+    /**
+     * The enum Format.
+     */
     public enum Format {
 
-        NONE(0), FILE(1), FILE_SHOW_SEC(2), GUI(3);
+        /**
+         * None format.
+         */
+        NONE(0), /**
+         * File format.
+         */
+        FILE(1), /**
+         * File show sec format.
+         */
+        FILE_SHOW_SEC(2), /**
+         * Gui format.
+         */
+        GUI(3);
 
+        /**
+         * The .
+         */
         int i;
 
 
@@ -49,10 +69,28 @@ public class TimeFormatUtils {
     }
 
 
+    /**
+     * The enum Daytime.
+     */
     public enum Daytime {
 
-        Morning(0), Afternoon(1), Evening(2), Night(3);
+        /**
+         * Morning daytime.
+         */
+        Morning(0), /**
+         * Afternoon daytime.
+         */
+        Afternoon(1), /**
+         * Evening daytime.
+         */
+        Evening(2), /**
+         * Night daytime.
+         */
+        Night(3);
 
+        /**
+         * The D.
+         */
         int d;
 
 
@@ -71,15 +109,39 @@ public class TimeFormatUtils {
     }
 
 
+    /**
+     * The constant DEFAULT_FORMAT.
+     */
     public static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    /**
+     * The constant DEFAULT_FORMAT_YMD_HMS.
+     */
     public static final String DEFAULT_FORMAT_YMD_HMS = "yyyy-MM-dd HH:mm:ss";
+    /**
+     * The constant DEFAULT_FORMAT_YMD_HM.
+     */
     public static final String DEFAULT_FORMAT_YMD_HM = "yyyy-MM-dd HH:mm";
+    /**
+     * The constant DEFAULT_FORMAT_MD_HM.
+     */
     public static final String DEFAULT_FORMAT_MD_HM = "MM-dd HH:mm";
+    /**
+     * The constant DEFAULT_FORMAT_DMY_HM.
+     */
     public static final String DEFAULT_FORMAT_DMY_HM = "dd.MM.yyyy HH:mm";
+    /**
+     * The constant DEFAULT_FORMAT_DMY_HMS.
+     */
     public static final String DEFAULT_FORMAT_DMY_HMS = "dd.MM.yyyy HH:mm:ss";
 
+    /**
+     * The constant LOG_FORMAT.
+     */
     public static final String LOG_FORMAT = "yyyy.MM.dd HH:mm:ss:SSS";
 
+    /**
+     * The constant UTC_FORMAT.
+     */
     public static final String UTC_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
 
@@ -460,7 +522,7 @@ public class TimeFormatUtils {
 
     /**
      * Timestamp to millis long.
-     * <p/>
+     * <p>
      * Get milliseconds from a SQL-timestamp (such as '2015-12-29 13:05:13').
      *
      * @param timestamp the timestamp

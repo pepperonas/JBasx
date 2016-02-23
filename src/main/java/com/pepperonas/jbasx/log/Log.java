@@ -31,6 +31,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * The type Log.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class Log {

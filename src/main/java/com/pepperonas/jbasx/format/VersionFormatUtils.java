@@ -14,32 +14,36 @@
  * limitations under the License.
  */
 
-package com.pepperonas.jbasx.system;
+package com.pepperonas.jbasx.format;
 
 /**
- * The type System utils.
+ * The type Version format utils.
  *
  * @author Martin Pfeffer (pepperonas)
  */
-public class SystemUtils {
+public class VersionFormatUtils {
 
     /**
-     * Gets os.
+     * Format build number string.
      *
-     * @return the os
+     * @param buildNumber the build number
+     * @return the string
      */
-    public static String getOs() {
-        return System.getProperty("os.name");
-    }
+    public static String formatBuildNumber(String buildNumber) {
+        String res = "";
+        int number = Integer.parseInt(buildNumber);
 
+        if (number < 10) {
+            buildNumber = "00" + buildNumber;
+        } else if (number < 100) {
+            buildNumber = "0" + buildNumber;
+        }
 
-    /**
-     * Is linux boolean.
-     *
-     * @return the boolean
-     */
-    public static boolean isLinux() {
-        return getOs().toLowerCase().contains("linux");
+        for (int i = 0; i < buildNumber.length(); i++) {
+            res += (res.length() == 0 ? "" : ".") + buildNumber.charAt(i);
+        }
+
+        return res;
     }
 
 }

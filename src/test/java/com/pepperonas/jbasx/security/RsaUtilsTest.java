@@ -39,6 +39,8 @@ import java.security.spec.RSAPublicKeySpec;
 import javax.crypto.Cipher;
 
 /**
+ * The type Rsa utils test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class RsaUtilsTest {
@@ -100,6 +102,8 @@ public class RsaUtilsTest {
     /**
      * Encrypt text.
      *
+     * @param publicKey the public key
+     * @param data      the data
      * @return The encrypted bytes.
      */
     public static byte[] encryptText(File publicKey, String data) {
@@ -121,6 +125,8 @@ public class RsaUtilsTest {
     /**
      * Encrypt bytes.
      *
+     * @param publicKey the public key
+     * @param bytes     the bytes
      * @return The encrypted bytes.
      */
     public static byte[] encryptBytes(File publicKey, byte[] bytes) {
@@ -142,6 +148,8 @@ public class RsaUtilsTest {
     /**
      * Encrypt file.
      *
+     * @param publicKey the public key
+     * @param file      the file
      * @return The encrypted bytes.
      */
     public static byte[] encryptFile(File publicKey, File file) {
@@ -164,6 +172,8 @@ public class RsaUtilsTest {
     /**
      * Decrypt data.
      *
+     * @param privateKey the private key
+     * @param data       the data
      * @return The decrypted text.
      */
     public static String decryptText(File privateKey, byte[] data) {
@@ -186,6 +196,8 @@ public class RsaUtilsTest {
     /**
      * Decrypt data.
      *
+     * @param privateKey the private key
+     * @param data       the data
      * @return The decrypted bytes.
      */
     public static byte[] decryptBytes(File privateKey, byte[] data) {

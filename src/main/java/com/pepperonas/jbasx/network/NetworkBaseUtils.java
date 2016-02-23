@@ -27,6 +27,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
+ * The type Network base utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class NetworkBaseUtils {

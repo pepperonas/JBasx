@@ -39,6 +39,8 @@ import java.security.spec.RSAPublicKeySpec;
 import javax.crypto.Cipher;
 
 /**
+ * The type Rsa utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class RsaUtils {

@@ -17,6 +17,8 @@
 package com.pepperonas.jbasx.base;
 
 /**
+ * The type Constants.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class Constants {
@@ -35,8 +37,17 @@ public class Constants {
      * Gravity in m/s².
      */
     public static final double GRAVITY_EARTH = 9.80665d;
+    /**
+     * The constant GRAVITY_MOON.
+     */
     public static final double GRAVITY_MOON = 1.622d;
+    /**
+     * The constant GRAVITY_MARS.
+     */
     public static final double GRAVITY_MARS = 3.711d;
+    /**
+     * The constant GRAVITY_IO.
+     */
     public static final double GRAVITY_IO = 1.796d;
 
     /**

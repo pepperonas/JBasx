@@ -30,6 +30,8 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 /**
+ * The type Zip utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ZipUtils {

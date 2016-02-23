@@ -21,10 +21,15 @@ import com.pepperonas.jbasx.log.Log;
 import java.io.File;
 
 /**
+ * The type Jbasx.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class Jbasx {
 
+    /**
+     * The constant TAG.
+     */
     public static final String TAG = "Jbasx";
 
     private static final String LIBRARY_NAME = "jbasx";
@@ -88,8 +93,20 @@ public class Jbasx {
     }
 
 
+    /**
+     * The enum Log mode.
+     */
     public enum LogMode {
-        NONE(-1), DEFAULT(0), ALL(3);
+        /**
+         * None log mode.
+         */
+        NONE(-1), /**
+         * Default log mode.
+         */
+        DEFAULT(0), /**
+         * All log mode.
+         */
+        ALL(3);
 
         private final int mode;
 
@@ -103,6 +120,9 @@ public class Jbasx {
     }
 
 
+    /**
+     * The constant mLog.
+     */
     public static LogMode mLog = LogMode.DEFAULT;
 
 
@@ -151,6 +171,9 @@ public class Jbasx {
     }
 
 
+    /**
+     * The type Version.
+     */
     public static class Version {
 
         /**

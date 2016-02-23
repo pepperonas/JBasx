@@ -22,6 +22,8 @@ import java.security.MessageDigest;
 import java.util.Locale;
 
 /**
+ * The type Security utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class SecurityUtils {

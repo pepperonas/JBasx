@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
+ * The type Networker.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class Networker implements Callable<List<String>> {
@@ -33,8 +35,17 @@ public class Networker implements Callable<List<String>> {
     private static final String TAG = "Networker";
 
 
+    /**
+     * The enum Mode.
+     */
     public enum Mode {
-        IP_LOOKUP, HOST_ADDRESSES
+        /**
+         * Ip lookup mode.
+         */
+        IP_LOOKUP, /**
+         * Host addresses mode.
+         */
+        HOST_ADDRESSES
     }
 
 

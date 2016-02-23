@@ -36,6 +36,9 @@ public class ColorXs {
     /**
      * Return the alpha component of a color int. This is the same as saying
      * color >>> 24
+     *
+     * @param color the color
+     * @return the int
      */
     public static int alpha(int color) {
         return color >>> 24;
@@ -45,6 +48,9 @@ public class ColorXs {
     /**
      * Return the red component of a color int. This is the same as saying
      * (color >> 16) & 0xFF
+     *
+     * @param color the color
+     * @return the int
      */
     public static int red(int color) {
         return (color >> 16) & 0xFF;
@@ -54,6 +60,9 @@ public class ColorXs {
     /**
      * Return the green component of a color int. This is the same as saying
      * (color >> 8) & 0xFF
+     *
+     * @param color the color
+     * @return the int
      */
     public static int green(int color) {
         return (color >> 8) & 0xFF;
@@ -63,6 +72,9 @@ public class ColorXs {
     /**
      * Return the blue component of a color int. This is the same as saying
      * color & 0xFF
+     *
+     * @param color the color
+     * @return the int
      */
     public static int blue(int color) {
         return color & 0xFF;
@@ -79,6 +91,7 @@ public class ColorXs {
      * @param red   Red component [0..255] of the color
      * @param green Green component [0..255] of the color
      * @param blue  Blue component [0..255] of the color
+     * @return the int
      */
     public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
@@ -95,6 +108,7 @@ public class ColorXs {
      * @param red   Red component [0..255] of the color
      * @param green Green component [0..255] of the color
      * @param blue  Blue component [0..255] of the color
+     * @return the int
      */
     public static int argb(int alpha, int red, int green, int blue) {
         return (alpha << 24) | (red << 16) | (green << 8) | blue;
@@ -104,6 +118,7 @@ public class ColorXs {
     /**
      * Returns the brightness component of a color int.
      *
+     * @param color the color
      * @return A value between 0.0f and 1.0f
      * @hide Pending API council
      */
@@ -129,6 +144,9 @@ public class ColorXs {
      * 'yellow', 'lightgray', 'darkgray', 'grey', 'lightgrey', 'darkgrey',
      * 'aqua', 'fuchsia', 'lime', 'maroon', 'navy', 'olive', 'purple',
      * 'silver', 'teal'.
+     *
+     * @param colorString the color string
+     * @return the int
      */
     public static int parseColor(String colorString) {
         if (colorString.charAt(0) == '#') {

@@ -17,6 +17,8 @@
 package com.pepperonas.jbasx.format;
 
 /**
+ * The type Number format utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class NumberFormatUtils {

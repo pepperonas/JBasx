@@ -20,6 +20,8 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * The type Base utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class BaseUtils {

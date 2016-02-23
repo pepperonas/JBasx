@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The type J utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class jUtils {

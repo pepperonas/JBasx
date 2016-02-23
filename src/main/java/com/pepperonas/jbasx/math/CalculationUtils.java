@@ -17,6 +17,8 @@
 package com.pepperonas.jbasx.math;
 
 /**
+ * The type Calculation utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class CalculationUtils {

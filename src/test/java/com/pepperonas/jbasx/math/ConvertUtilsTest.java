@@ -23,6 +23,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 /**
+ * The type Convert utils test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class ConvertUtilsTest {
@@ -30,6 +32,11 @@ public class ConvertUtilsTest {
     private static final String TAG = "ConvertUtilsTest";
 
 
+    /**
+     * Test ms to kmh.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testMsToKmh() throws Exception {
         int v = ConvertUtils.msToKmh(100f);
@@ -38,6 +45,11 @@ public class ConvertUtilsTest {
     }
 
 
+    /**
+     * Test ms to kmh double.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testMsToKmh_double() throws Exception {
         double v = ConvertUtils.msToKmh(20.33d);
@@ -46,6 +58,11 @@ public class ConvertUtilsTest {
     }
 
 
+    /**
+     * Test celsius to fahrenheit.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testCelsiusToFahrenheit() throws Exception {
         double v = ConvertUtils.celsiusToFahrenheit(223.874d);
@@ -54,6 +71,11 @@ public class ConvertUtilsTest {
     }
 
 
+    /**
+     * Test fahrenheit to celsius.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFahrenheitToCelsius() throws Exception {
         double v = ConvertUtils.fahrenheitToCelsius(87);

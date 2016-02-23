@@ -26,6 +26,8 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
+ * The type Crypt utils.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class CryptUtils {

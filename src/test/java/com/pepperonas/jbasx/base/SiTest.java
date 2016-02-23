@@ -23,6 +23,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 /**
+ * The type Si test.
+ *
  * @author Martin Pfeffer (pepperonas)
  */
 public class SiTest {
@@ -30,6 +32,11 @@ public class SiTest {
     private static final String TAG = "SiTest";
 
 
+    /**
+     * Test yotta.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testYotta() throws Exception {
         double v = Si.YOTTA;
@@ -38,6 +45,11 @@ public class SiTest {
     }
 
 
+    /**
+     * Test centi.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testCenti() throws Exception {
         double v = Si.CENTI;
@@ -46,6 +58,11 @@ public class SiTest {
     }
 
 
+    /**
+     * Test yocto.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testYocto() throws Exception {
         double v = Si.YOCTO;
