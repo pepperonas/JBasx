@@ -25,7 +25,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * The type File utils.
@@ -124,6 +127,41 @@ public class FileUtils {
             e.printStackTrace();
         }
         return false;
+    }
+
+
+    /**
+     * Gets all files.
+     *
+     * @param dirName the dir name
+     * @return the all files
+     */
+    public static List<File> getAllFiles(String dirName) {
+        File directory = new File(dirName);
+
+        List<File> resultList = new ArrayList<>();
+
+        File[] files = directory.listFiles();
+        resultList.addAll(Arrays.asList(files));
+        for (File file : files) {
+            if (file.isFile()) {
+                System.out.println(file.getAbsolutePath());
+            } else if (file.isDirectory()) {
+                resultList.addAll(getAllFiles(file.getAbsolutePath()));
+            }
+        }
+        return resultList;
+    }
+
+
+    /**
+     * Gets all files.
+     *
+     * @param dir the dir
+     * @return the all files
+     */
+    public static List<File> getAllFiles(File dir) {
+        return getAllFiles(dir.getPath());
     }
 
 

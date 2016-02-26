@@ -48,6 +48,28 @@ public class IoUtils {
 
 
     /**
+     * Gets text from file.
+     *
+     * @param file the file
+     * @return the text from file
+     */
+    public static String getTextFromFile(File file) {
+        try {
+            String line;
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            StringBuilder sb = new StringBuilder();
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            return sb.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
+    /**
      * Read utf 8 string.
      *
      * @param sourcePath the source path
