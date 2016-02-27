@@ -16,6 +16,9 @@
 
 package com.pepperonas.jbasx.system;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * The type System utils.
  *
@@ -40,6 +43,61 @@ public class SystemUtils {
      */
     public static boolean isLinux() {
         return getOs().toLowerCase().contains("linux");
+    }
+
+
+    /**
+     * Execute command string.
+     *
+     * @param command the command
+     * @return the string
+     */
+    public static String executeCommand(String command) {
+        StringBuilder builder = new StringBuilder();
+
+        try {
+            Process p = Runtime.getRuntime().exec(command);
+            String line;
+
+            p.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            while ((line = reader.readLine()) != null) {
+                builder.append(line).append("\n");
+            }
+
+        } catch (Exception e) {
+            return "";
+        }
+
+        return builder.toString();
+    }
+
+
+    /**
+     * Execute command as root string.
+     *
+     * @param command  the command
+     * @param password the password
+     * @return the string
+     */
+    public static String executeCommandAsRoot(String command, String password) {
+        StringBuilder builder = new StringBuilder();
+
+        try {
+            String[] cmd = {"/bin/bash", "-c", "echo " + password + "| sudo -S " + command};
+            Process p = Runtime.getRuntime().exec(cmd);
+            String line;
+            BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            while ((line = input.readLine()) != null) {
+                builder.append(line).append("\n");
+            }
+            input.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return builder.toString();
     }
 
 }
