@@ -16,7 +16,7 @@
 
 package com.pepperonas.jbasx;
 
-import com.pepperonas.jbasx.log.Log;
+import com.pepperonas.jbasx.io.IoUtils;
 
 import java.io.File;
 
@@ -32,9 +32,9 @@ public class Jbasx {
      */
     public static final String TAG = "Jbasx";
 
-    private static final String LIBRARY_NAME = "jbasx";
+    public static final String BUILD_NUMBER = "12";
 
-    private static final String VERSION_NAME = "0.1.1";
+    private static final String LIBRARY_NAME = "jbasx";
 
     private static String mLogFilePath = new File(System.getProperty("user.home")).getPath();
     private static String mLogFileName = "jbasx.log";
@@ -131,7 +131,9 @@ public class Jbasx {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) { }
+    public static void main(String[] args) {
+        System.out.println(Version.getVersion());
+    }
 
 
     /**
@@ -176,40 +178,20 @@ public class Jbasx {
      */
     public static class Version {
 
-        /**
-         * Show the current version of the library.
-         */
-        public static void showVersionInfo() {
-            Log.i(TAG, versionInfo());
+        public static String getVersion() {
+            return getVersionNumber() + "." + getBuildNumber();
         }
 
 
-        /**
-         * Gets version info.
-         *
-         * @return <p>---JBASX---<br> {@value #LIBRARY_NAME}-{@value #VERSION_NAME}</p>
-         */
-        public static String getVersionInfo() {
-            return "---JBASX---\n" +
-                   Version.versionInfo();
+        public static String getVersionNumber() {
+            String content = IoUtils.readFast("pom.xml");
+            return content.split("<version\\.number>")[1].split("\n")[0].replace("</version.number>", "");
         }
 
 
-        /**
-         * Version name string.
-         *
-         * @return '{@value #VERSION_NAME}'
-         */
-        public static String versionName() { return VERSION_NAME; }
-
-
-        /**
-         * Version info string.
-         *
-         * @return '{@value #LIBRARY_NAME}-{@value #VERSION_NAME}'
-         */
-        public static String versionInfo() {
-            return (LIBRARY_NAME + "-" + VERSION_NAME + ".jar");
+        public static String getBuildNumber() {
+            String content = IoUtils.readFast("pom.xml");
+            return content.split("<build\\.number>")[1].split("\n")[0].replace("</build.number>", "");
         }
 
 

@@ -4,11 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <version.number>0.1</version.number>
+        <build.number>12</build.number>
+    </properties>
+
     <groupId>com.pepperonas.</groupId>
     <artifactId>jbasx</artifactId>
-    <version>0.1.1</version>
+    <version>${version.number}</version>
+    
     <build>
+        <finalName>${project.artifactId}-${project.version}.${build.number}</finalName>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -17,6 +25,16 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <outputDirectory>${project.basedir}/releases</outputDirectory>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
     <dependencies>

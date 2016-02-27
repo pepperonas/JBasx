@@ -48,15 +48,37 @@ public class IoUtils {
 
 
     /**
-     * Gets text from file.
+     * Read fast string.
      *
      * @param file the file
-     * @return the text from file
+     * @return the string
      */
-    public static String getTextFromFile(File file) {
+    public static String readFast(File file) {
         try {
             String line;
             BufferedReader br = new BufferedReader(new FileReader(file));
+            StringBuilder sb = new StringBuilder();
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            return sb.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
+    /**
+     * Read fast string.
+     *
+     * @param filePath the file path
+     * @return the string
+     */
+    public static String readFast(String filePath) {
+        try {
+            String line;
+            BufferedReader br = new BufferedReader(new FileReader(new File(filePath)));
             StringBuilder sb = new StringBuilder();
             while ((line = br.readLine()) != null) {
                 sb.append(line).append("\n");
