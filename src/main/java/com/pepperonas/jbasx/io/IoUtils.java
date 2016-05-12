@@ -19,21 +19,11 @@ package com.pepperonas.jbasx.io;
 import com.pepperonas.jbasx.Jbasx;
 import com.pepperonas.jbasx.log.Log;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
+import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +36,20 @@ public class IoUtils {
 
     private static final String TAG = "IoUtils";
 
+
+    /**
+     * Append to file.
+     *
+     * @param file the file
+     * @param text the text
+     */
+    public static void appendToFile(File file, String text) {
+        try {
+            Files.write(Paths.get(file.getPath()), text.getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Read fast string.

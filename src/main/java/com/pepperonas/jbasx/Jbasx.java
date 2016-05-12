@@ -32,7 +32,7 @@ public class Jbasx {
      */
     public static final String TAG = "Jbasx";
 
-    public static final String BUILD_NUMBER = "12";
+    public static final String BUILD_NUMBER = "13";
 
     private static final String LIBRARY_NAME = "jbasx";
 
