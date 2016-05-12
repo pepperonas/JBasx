@@ -29,8 +29,6 @@ import java.util.List;
 
 /**
  * The type Io utils.
- *
- * @author Martin Pfeffer (pepperonas)
  */
 public class IoUtils {
 
@@ -183,9 +181,9 @@ public class IoUtils {
 
 
     /**
-     * Read the content of a ISO-8859-1 encoded file.
+     * Read iso 8859 string.
      *
-     * @param sourceFile File with data which should be read.
+     * @param sourceFile the source file
      * @return the string
      * @throws IOException the io exception
      */
@@ -214,11 +212,11 @@ public class IoUtils {
 
 
     /**
-     * Store text into a given file.
+     * Write boolean.
      *
-     * @param file File to store.
-     * @param text The text which should be stored.
-     * @return Whether the operation was successful or not.
+     * @param file the file
+     * @param text the text
+     * @return the boolean
      */
     public static boolean write(File file, String text) {
         BufferedWriter writer = null;
@@ -471,12 +469,6 @@ public class IoUtils {
     }
 
 
-    /**
-     * Write.
-     *
-     * @param records the records
-     * @param writer  the writer
-     */
     private static void write(List<String> records, Writer writer) {
         try {
             for (String record : records) {
@@ -494,6 +486,13 @@ public class IoUtils {
         }
     }
 
+    /**
+     * Count lines int.
+     *
+     * @param filename the filename
+     * @return the int
+     * @throws IOException the io exception
+     */
     public static int countLines(String filename) throws IOException {
         InputStream is = new BufferedInputStream(new FileInputStream(filename));
         try {
