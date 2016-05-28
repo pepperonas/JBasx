@@ -39,9 +39,9 @@ public class ConvertUtilsTest {
      */
     @Test
     public void testMsToKmh() throws Exception {
-        int v = ConvertUtils.msToKmh(100f);
+        float v = ConvertUtils.meterPerSecondToKmh(100f);
         Log.d(TAG, "testMsToKmh " + v);
-        Assert.assertEquals(360, v);
+        Assert.assertEquals(360.0f, v);
     }
 
 
@@ -52,9 +52,9 @@ public class ConvertUtilsTest {
      */
     @Test
     public void testMsToKmh_double() throws Exception {
-        double v = ConvertUtils.msToKmh(20.33d);
+        double v = ConvertUtils.meterPerSecondToKmh(20.33f);
         Log.d(TAG, "testMsToKmh_double " + v);
-        Assert.assertEquals(73.188, v);
+        Assert.assertEquals(73.18799591064453, v);
     }
 
 

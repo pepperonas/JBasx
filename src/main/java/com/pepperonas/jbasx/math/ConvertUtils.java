@@ -20,71 +20,95 @@ import com.pepperonas.jbasx.base.Constants;
 
 /**
  * The type Convert utils.
- *
- * @author Martin Pfeffer (pepperonas)
  */
 public class ConvertUtils {
 
     /**
-     * Ms to min long.
+     * Millisecond to minute long.
      *
-     * @param ms the ms
+     * @param millis the millis
      * @return the long
      */
-    public static long msToMin(long ms) {
-        return (ms * 1000L * 60L);
+    public static long millisecondToMinute(long millis) {
+        return (millis * 1000L * 60L);
     }
 
 
     /**
-     * Ms to h long.
+     * Hour to millisecond long.
      *
-     * @param ms the ms
+     * @param millis the millis
      * @return the long
      */
-    public static long hToMs(long ms) {
-        return (ms * 1000L * 60L * 60L);
+    public static long hourToMillisecond(long millis) {
+        return (millis * 1000L * 60L * 60L);
     }
 
 
     /**
-     * S to min long.
+     * Minute to second long.
      *
-     * @param s the s
+     * @param sec the sec
      * @return the long
      */
-    public static long minToS(long s) {
-        return (s * 60L);
+    public static long minuteToSecond(long sec) {
+        return (sec * 60L);
     }
 
 
     /**
-     * S to h long.
+     * Hour to second long.
      *
-     * @param s the s
+     * @param sec the sec
      * @return the long
      */
-    public static long hToS(long s) {
-        return (s * 60L * 60L);
+    public static long hourToSecond(long sec) {
+        return (sec * 60L * 60L);
     }
 
 
     /**
-     * Ms to kmh int.
+     * Meter per second to kmh float.
      *
-     * @param ms the ms
-     * @return the int
+     * @param velocityInMeterPerSecond the velocity in meter per second
+     * @return the float
      */
-    public static int msToKmh(float ms) { return (int) (ms * 3.6d); }
+    public static float meterPerSecondToKmh(float velocityInMeterPerSecond) {
+        return (velocityInMeterPerSecond * 3.6f);
+    }
 
 
     /**
-     * Ms to kmh double.
+     * Meter per second to mph float.
      *
-     * @param ms the ms
-     * @return the double
+     * @param velocityInMeterPerSecond the velocity in meter per second
+     * @return the float
      */
-    public static double msToKmh(double ms) { return ms * 3.6d; }
+    public static float meterPerSecondToMph(float velocityInMeterPerSecond) {
+        return (velocityInMeterPerSecond * 2.23694f);
+    }
+
+
+    /**
+     * Kmh to meter per second float.
+     *
+     * @param velocityInKmh the velocity in kmh
+     * @return the float
+     */
+    public static float kmhToMeterPerSecond(float velocityInKmh) {
+        return velocityInKmh / 3.6f;
+    }
+
+
+    /**
+     * Mph to meter per second float.
+     *
+     * @param velocityInMph the velocity in mph
+     * @return the float
+     */
+    public static float mphToMeterPerSecond(float velocityInMph) {
+        return velocityInMph / 2.23694f;
+    }
 
 
     /**
