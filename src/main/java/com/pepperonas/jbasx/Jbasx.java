@@ -32,6 +32,9 @@ public class Jbasx {
      */
     public static final String TAG = "Jbasx";
 
+    /**
+     * The constant BUILD_NUMBER.
+     */
     public static final String BUILD_NUMBER = "13";
 
     private static final String LIBRARY_NAME = "jbasx";
@@ -178,17 +181,32 @@ public class Jbasx {
      */
     public static class Version {
 
+        /**
+         * Gets version.
+         *
+         * @return the version
+         */
         public static String getVersion() {
             return getVersionNumber() + "." + getBuildNumber();
         }
 
 
+        /**
+         * Gets version number.
+         *
+         * @return the version number
+         */
         public static String getVersionNumber() {
             String content = IoUtils.readFast("pom.xml");
             return content.split("<version\\.number>")[1].split("\n")[0].replace("</version.number>", "");
         }
 
 
+        /**
+         * Gets build number.
+         *
+         * @return the build number
+         */
         public static String getBuildNumber() {
             String content = IoUtils.readFast("pom.xml");
             return content.split("<build\\.number>")[1].split("\n")[0].replace("</build.number>", "");

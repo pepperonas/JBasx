@@ -43,7 +43,8 @@ public class Log {
     /**
      * Send a VERBOSE log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void v(String tag, String msg) {
@@ -55,7 +56,8 @@ public class Log {
     /**
      * Send a INFO log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void i(String tag, String msg) {
@@ -67,7 +69,8 @@ public class Log {
     /**
      * Send a DEBUG log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void d(String tag, String msg) {
@@ -79,7 +82,8 @@ public class Log {
     /**
      * Send a DEBUG log message.
      *
-     * @param tag     Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag     Used to identify the source of a log message. It usually identifies the class or activity where the log
+     *                call occurs.
      * @param msg     The message you would like logged.
      * @param strings The list of String objects you would like logged.
      */
@@ -92,7 +96,8 @@ public class Log {
     /**
      * Send a DEBUG log message.
      *
-     * @param tag     Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag     Used to identify the source of a log message. It usually identifies the class or activity where the log
+     *                call occurs.
      * @param msg     The message you would like logged.
      * @param strings The array of String objects you would like logged.
      */
@@ -105,7 +110,8 @@ public class Log {
     /**
      * Send a WARN log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void w(String tag, String msg) {
@@ -117,7 +123,8 @@ public class Log {
     /**
      * Send a WARN log message and log the exception.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      * @param tr  An exception to log.
      */
@@ -130,7 +137,8 @@ public class Log {
     /**
      * Send an ERROR log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void e(String tag, String msg) {
@@ -142,7 +150,8 @@ public class Log {
     /**
      * Send a ERROR log message and log the exception.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      * @param tr  An exception to log.
      */
@@ -155,7 +164,8 @@ public class Log {
     /**
      * Send a What a Terrible Failure log message.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      */
     public static void wtf(String tag, String msg) {
@@ -167,7 +177,8 @@ public class Log {
     /**
      * Send a What a Terrible Failure log message and log the exception.
      *
-     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.
+     * @param tag Used to identify the source of a log message. It usually identifies the class or activity where the log call
+     *            occurs.
      * @param msg The message you would like logged.
      * @param tr  An exception to log.
      */

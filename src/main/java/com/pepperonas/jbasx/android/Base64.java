@@ -46,7 +46,7 @@ public class Base64 {
     /**
      * Encoder flag bit to indicate lines should be terminated with a
      * CRLF pair instead of just an LF.  Has no effect if {@code
-     * NO_WRAP}* is specified as well.
+     * NO_WRAP}** is specified as well.
      */
     public static final int CRLF = 4;
 
@@ -94,7 +94,8 @@ public class Base64 {
          * @param input  the input
          * @param offset the offset
          * @param len    the len
-         * @param finish true if this is the final call to process for               this object.  Will finalize the coder state and               include any final bytes in the output.
+         * @param finish true if this is the final call to process for               this object.  Will finalize the coder
+         *               state and               include any final bytes in the output.
          * @return true if the input so far is good; false if some error has been detected in the input stream..
          */
         public abstract boolean process(byte[] input, int offset, int len, boolean finish);
@@ -103,7 +104,8 @@ public class Base64 {
          * Max output size int.
          *
          * @param len the len
-         * @return the maximum number of bytes a call to process() could produce for the given number of input bytes.  This may be an overestimate.
+         * @return the maximum number of bytes a call to process() could produce for the given number of input bytes.  This may
+         * be an overestimate.
          */
         public abstract int maxOutputSize(int len);
     }
@@ -157,7 +159,8 @@ public class Base64 {
      * @param input  the data to decode
      * @param offset the position within the input array at which to start
      * @param len    the number of bytes of input to decode
-     * @param flags  controls certain features of the decoded output.               Pass {@code DEFAULT} to decode standard Base64.
+     * @param flags  controls certain features of the decoded output.               Pass {@code DEFAULT} to decode standard
+     *               Base64.
      * @return the byte [ ]
      * @throws IllegalArgumentException if the input contains                                  incorrect padding
      */
@@ -473,7 +476,8 @@ public class Base64 {
      * String with the result.
      *
      * @param input the data to encode
-     * @param flags controls certain features of the encoded output.              Passing {@code DEFAULT} results in output that              adheres to RFC 2045.
+     * @param flags controls certain features of the encoded output.              Passing {@code DEFAULT} results in output
+     *              that              adheres to RFC 2045.
      * @return the string
      */
     public static String encodeToString(byte[] input, int flags) {
@@ -493,7 +497,8 @@ public class Base64 {
      * @param input  the data to encode
      * @param offset the position within the input array at which to               start
      * @param len    the number of bytes of input to encode
-     * @param flags  controls certain features of the encoded output.               Passing {@code DEFAULT} results in output that               adheres to RFC 2045.
+     * @param flags  controls certain features of the encoded output.               Passing {@code DEFAULT} results in output
+     *               that               adheres to RFC 2045.
      * @return the string
      */
     public static String encodeToString(byte[] input, int offset, int len, int flags) {
@@ -511,7 +516,8 @@ public class Base64 {
      * byte[] with the result.
      *
      * @param input the data to encode
-     * @param flags controls certain features of the encoded output.              Passing {@code DEFAULT} results in output that              adheres to RFC 2045.
+     * @param flags controls certain features of the encoded output.              Passing {@code DEFAULT} results in output
+     *              that              adheres to RFC 2045.
      * @return the byte [ ]
      */
     public static byte[] encode(byte[] input, int flags) {
@@ -526,7 +532,8 @@ public class Base64 {
      * @param input  the data to encode
      * @param offset the position within the input array at which to               start
      * @param len    the number of bytes of input to encode
-     * @param flags  controls certain features of the encoded output.               Passing {@code DEFAULT} results in output that               adheres to RFC 2045.
+     * @param flags  controls certain features of the encoded output.               Passing {@code DEFAULT} results in output
+     *               that               adheres to RFC 2045.
      * @return the byte [ ]
      */
     public static byte[] encode(byte[] input, int offset, int len, int flags) {

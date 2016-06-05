@@ -49,6 +49,7 @@ public class IoUtils {
         }
     }
 
+
     /**
      * Read fast string.
      *
@@ -485,6 +486,7 @@ public class IoUtils {
             }
         }
     }
+
 
     /**
      * Count lines int.

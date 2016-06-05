@@ -19,6 +19,7 @@ package com.pepperonas.jbasx.network;
 import com.pepperonas.jbasx.Jbasx;
 import com.pepperonas.jbasx.log.Log;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -68,6 +69,29 @@ public class NetworkBaseUtils {
             }
         }
         return ipList;
+    }
+
+
+    /**
+     * Check hosts.
+     *
+     * @param subnet  the subnet
+     * @param timeout the timeout
+     * @return the list
+     */
+    public List<String> checkHosts(String subnet, int timeout) {
+        List<String> hosts = new ArrayList<>();
+        for (int i = 1; i < 255; i++) {
+            String host = subnet + "." + i;
+            try {
+                if (InetAddress.getByName(host).isReachable(timeout)) {
+                    hosts.add(host);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return hosts;
     }
 
 }
