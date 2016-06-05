@@ -24,6 +24,7 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -35,6 +36,42 @@ import java.util.List;
 public class NetworkBaseUtils {
 
     private static final String TAG = "NetworkBaseUtils";
+
+
+    /**
+     * Gets ip address.
+     *
+     * @param useIpV4 the use ip v 4
+     * @return the ip address
+     */
+    public static String getIpAddress(boolean useIpV4) {
+        String ip = "";
+        try {
+            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+            for (NetworkInterface intf : interfaces) {
+                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
+                for (InetAddress addr : addrs) {
+                    if (!addr.isLoopbackAddress()) {
+                        ip = addr.getHostAddress();
+                        boolean isIPv4 = ip.indexOf(':') < 0;
+                        if (useIpV4) {
+                            if (isIPv4) {
+                                return ip;
+                            }
+                        } else {
+                            if (!isIPv4) {
+                                int delim = ip.indexOf('%');
+                                return delim < 0 ? ip.toUpperCase() : ip.substring(0, delim).toUpperCase();
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "getIpAddress: " + e);
+        }
+        return ip;
+    }
 
 
     /**
@@ -79,7 +116,7 @@ public class NetworkBaseUtils {
      * @param timeout the timeout
      * @return the list
      */
-    public List<String> checkHosts(String subnet, int timeout) {
+    public List<String> getHosts(String subnet, int timeout) {
         List<String> hosts = new ArrayList<>();
         for (int i = 1; i < 255; i++) {
             String host = subnet + "." + i;
