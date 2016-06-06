@@ -20,11 +20,12 @@ import com.pepperonas.jbasx.Jbasx;
 import com.pepperonas.jbasx.log.Log;
 
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -39,38 +40,32 @@ public class NetworkBaseUtils {
 
 
     /**
+     * Gets ip v 4 address.
+     *
+     * @return the ip v 4 address
+     */
+    public static String getIpV4Address() {
+        try {
+            return Inet4Address.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            Log.e(TAG, "getIpAddress: " + e.getMessage());
+            return "";
+        }
+    }
+
+
+    /**
      * Gets ip address.
      *
-     * @param useIpV4 the use ip v 4
      * @return the ip address
      */
-    public static String getIpAddress(boolean useIpV4) {
-        String ip = "";
+    public static String getIpAddress() {
         try {
-            List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
-            for (NetworkInterface intf : interfaces) {
-                List<InetAddress> addrs = Collections.list(intf.getInetAddresses());
-                for (InetAddress addr : addrs) {
-                    if (!addr.isLoopbackAddress()) {
-                        ip = addr.getHostAddress();
-                        boolean isIPv4 = ip.indexOf(':') < 0;
-                        if (useIpV4) {
-                            if (isIPv4) {
-                                return ip;
-                            }
-                        } else {
-                            if (!isIPv4) {
-                                int delim = ip.indexOf('%');
-                                return delim < 0 ? ip.toUpperCase() : ip.substring(0, delim).toUpperCase();
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "getIpAddress: " + e);
+            return InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            Log.e(TAG, "getIpAddress: " + e.getMessage());
+            return "";
         }
-        return ip;
     }
 
 
