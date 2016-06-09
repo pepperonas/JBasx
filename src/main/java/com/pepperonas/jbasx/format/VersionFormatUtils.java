@@ -23,24 +23,25 @@ package com.pepperonas.jbasx.format;
  */
 public class VersionFormatUtils {
 
+
     /**
-     * Format build number string.
+     * Format version code string.
      *
-     * @param buildNumber the build number
+     * @param versionCode the version code
      * @return the string
      */
-    public static String formatBuildNumber(String buildNumber) {
+    public static String formatVersionCode(String versionCode) {
         String res = "";
-        int number = Integer.parseInt(buildNumber);
+        int number = Integer.parseInt(versionCode);
 
         if (number < 10) {
-            buildNumber = "00" + buildNumber;
+            versionCode = "00" + versionCode;
         } else if (number < 100) {
-            buildNumber = "0" + buildNumber;
+            versionCode = "0" + versionCode;
         }
 
-        for (int i = 0; i < buildNumber.length(); i++) {
-            res += (res.length() == 0 ? "" : ".") + buildNumber.charAt(i);
+        for (int i = 0; i < versionCode.length(); i++) {
+            res += (res.length() == 0 ? "" : ".") + versionCode.charAt(i);
         }
 
         return res;
