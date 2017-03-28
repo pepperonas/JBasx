@@ -1,18 +1,18 @@
 # JBasx
 Java common 
 
-##How to use
+## How to use
 Download the .jar and add it as library to your project's sources.
 
 
-##Developed By
+## Developed By
 
-* Martin Pfeffer - http://www.pepperonas.com - <pepperonas@gmail.com>
+* Martin Pfeffer - https://celox.io - <martin.pfeffer@celox.io>
 
 
-##License
+## License
 
-    Copyright 2016 Martin Pfeffer
+    Copyright 2017 Martin Pfeffer
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
