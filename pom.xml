@@ -21,7 +21,7 @@
 
     <properties>
         <version.number>0</version.number>
-        <build.number>1.6</build.number>
+        <build.number>1.7</build.number>
     </properties>
 
     <groupId>com.pepperonas.</groupId>

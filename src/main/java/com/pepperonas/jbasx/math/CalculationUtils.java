@@ -18,13 +18,10 @@ package com.pepperonas.jbasx.math;
 
 /**
  * The type Calculation utils.
- *
- * @author Martin Pfeffer (pepperonas)
  */
 public class CalculationUtils {
 
     private static final String TAG = "CalculationUtils";
-
 
     /**
      * Percent double.
@@ -50,26 +47,17 @@ public class CalculationUtils {
 
 
     /**
-     * Calculate the distance in meters between two geographical coordinates.
+     * Find max int.
      *
-     * @param latA The latitude of point A.
-     * @param lngA The longitude of point A.
-     * @param latB The latitude of point B.
-     * @param lngB The longitude of point B.
-     * @return The distance in meters.
+     * @param values the values
+     * @return the int
      */
-    public static double distanceBetween2GeoPositionsInMeters(double latA, double lngA, double latB, double lngB) {
-        double earthRadius = 6371;
-        double dLat = Math.toRadians(latB - latA);
-        double dLng = Math.toRadians(lngB - lngA);
-        double a = Math.sin(dLat / 2)
-                   * Math.sin(dLat / 2)
-                   + Math.cos(Math.toRadians(latA))
-                     * Math.cos(Math.toRadians(latB))
-                     * Math.sin(dLng / 2)
-                     * Math.sin(dLng / 2);
-        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        return (int) (earthRadius * c * 1000);
+    public static int findMax(int... values) {
+        int max = Integer.MIN_VALUE;
+        for (int i : values) {
+            if (i > max) max = i;
+        }
+        return max;
     }
 
 }

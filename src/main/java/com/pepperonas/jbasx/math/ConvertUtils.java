@@ -175,4 +175,5 @@ public class ConvertUtils {
     public static double kelvinToFahrenheit(double kelvin) {
         return ((kelvin + Constants.KELVIN_ZERO_CELSIUS) * 1.8d) + 32.d;
     }
+
 }
