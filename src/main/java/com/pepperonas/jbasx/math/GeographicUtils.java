@@ -43,7 +43,6 @@ public class GeographicUtils {
         return (Math.floor(degree) + (degree - Math.floor(degree)) * 60d / 100d) * 100d;
     }
 
-
     /**
      * Distance between 2 geo positions in meters double.
      *
@@ -65,6 +64,21 @@ public class GeographicUtils {
                 * Math.sin(dLng / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return (int) (earthRadius * c * 1000);
+    }
+
+    /**
+     * Bearing as coord string.
+     *
+     * @param bearing the bearing
+     * @return the string
+     */
+    public static String bearingAsCoord(int bearing) {
+        String coordNames[] = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"};
+        double directions = Math.round(bearing / 22.5);
+        if (directions < 0) {
+            directions = directions + 16;
+        }
+        return coordNames[(int) directions];
     }
 
 }
