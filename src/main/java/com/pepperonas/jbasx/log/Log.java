@@ -39,7 +39,6 @@ public class Log {
 
     private final static long LOG_FILE_LEN = 4194304; // 4MB
 
-
     /**
      * Send a VERBOSE log message.
      *
@@ -51,7 +50,6 @@ public class Log {
         System.out.println("V/" + Jbasx.getUniqueLogId() + tag + " - " + msg);
         if (Jbasx.writeLog()) writeLog("V/" + Jbasx.getUniqueLogId(), tag, msg);
     }
-
 
     /**
      * Send a INFO log message.
@@ -65,7 +63,6 @@ public class Log {
         if (Jbasx.writeLog()) writeLog("I/" + Jbasx.getUniqueLogId(), tag, msg);
     }
 
-
     /**
      * Send a DEBUG log message.
      *
@@ -77,7 +74,6 @@ public class Log {
         System.out.println("D/" + Jbasx.getUniqueLogId() + tag + " - " + msg);
         if (Jbasx.writeLog()) writeLog("D/" + Jbasx.getUniqueLogId(), tag, msg);
     }
-
 
     /**
      * Send a DEBUG log message.
@@ -92,7 +88,6 @@ public class Log {
         for (String s : strings) d(tag, msg + " [" + (i++) + "]" + s);
     }
 
-
     /**
      * Send a DEBUG log message.
      *
@@ -106,7 +101,6 @@ public class Log {
         for (String s : strings) d(tag, msg + " [" + (i++) + "]" + s);
     }
 
-
     /**
      * Send a WARN log message.
      *
@@ -118,7 +112,6 @@ public class Log {
         System.out.println("W/" + Jbasx.getUniqueLogId() + tag + " - " + msg);
         if (Jbasx.writeLog()) writeLog("W/" + Jbasx.getUniqueLogId(), tag, msg);
     }
-
 
     /**
      * Send a WARN log message and log the exception.
@@ -133,7 +126,6 @@ public class Log {
         if (Jbasx.writeLog()) writeLog("W/" + Jbasx.getUniqueLogId(), tag, msg, tr);
     }
 
-
     /**
      * Send an ERROR log message.
      *
@@ -145,7 +137,6 @@ public class Log {
         System.out.println("E/" + Jbasx.getUniqueLogId() + tag + " - " + msg);
         if (Jbasx.writeLog()) writeLog("E/" + Jbasx.getUniqueLogId(), tag, msg);
     }
-
 
     /**
      * Send a ERROR log message and log the exception.
@@ -160,7 +151,6 @@ public class Log {
         if (Jbasx.writeLog()) writeLog("E/" + Jbasx.getUniqueLogId(), tag, msg, tr);
     }
 
-
     /**
      * Send a What a Terrible Failure log message.
      *
@@ -172,7 +162,6 @@ public class Log {
         System.out.println("WTF/" + Jbasx.getUniqueLogId() + tag + " - " + msg);
         if (Jbasx.writeLog()) writeLog("WTF/" + Jbasx.getUniqueLogId(), tag, msg);
     }
-
 
     /**
      * Send a What a Terrible Failure log message and log the exception.
@@ -187,7 +176,6 @@ public class Log {
         if (Jbasx.writeLog()) writeLog("WTF/" + Jbasx.getUniqueLogId(), tag, msg, tr);
     }
 
-
     /**
      * Log hash map.
      *
@@ -201,7 +189,6 @@ public class Log {
             Log.d(tag, "Map[" + (i++) + "] " + name + " = " + v);
         }
     }
-
 
     /**
      * Handy function to get a loggable stack trace from a Throwable.
@@ -231,7 +218,6 @@ public class Log {
         return sw.toString();
     }
 
-
     /**
      * Write log.
      *
@@ -247,7 +233,6 @@ public class Log {
         }.start();
     }
 
-
     /**
      * Write log.
      *
@@ -260,7 +245,6 @@ public class Log {
         write2LogFile(s, tag, msg + '\n' + getStackTraceString(tr));
     }
 
-
     /**
      * Write 2 log file.
      *
@@ -271,9 +255,9 @@ public class Log {
     private static void write2LogFile(String s, String tag, String msg) {
         String log;
         if (Jbasx.writeLogWithStamp()) {
-            log = "[" + TimeFormatUtils.formatTime(System.currentTimeMillis(), TimeFormatUtils.LOG_FORMAT) + "] " + s + tag + " -\n" + msg;
+            log = "[" + TimeFormatUtils.formatTime(System.currentTimeMillis(), TimeFormatUtils.LOG_FORMAT) + "] " + s + tag + " -\n" + msg + "\n";
         } else {
-            log = s + tag + " - " + msg;
+            log = s + tag + " - " + msg + "\n";
         }
 
         if (com.pepperonas.jbasx.base.TextUtils.isEmpty(Jbasx.getLogFileName())) {
@@ -297,7 +281,6 @@ public class Log {
             e.printStackTrace();
         }
     }
-
 
     /**
      * Resize log file boolean.

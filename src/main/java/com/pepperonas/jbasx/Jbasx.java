@@ -35,7 +35,7 @@ public class Jbasx {
     /**
      * The constant BUILD_NUMBER.
      */
-    public static final String BUILD_NUMBER = "17";
+    public static final String BUILD_NUMBER = "19";
 
     private static final String LIBRARY_NAME = "jbasx";
 
