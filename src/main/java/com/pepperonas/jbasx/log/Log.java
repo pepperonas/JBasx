@@ -255,7 +255,7 @@ public class Log {
     private static void write2LogFile(String s, String tag, String msg) {
         String log;
         if (Jbasx.writeLogWithStamp()) {
-            log = "[" + TimeFormatUtils.formatTime(System.currentTimeMillis(), TimeFormatUtils.LOG_FORMAT) + "] " + s + tag + " -\n" + msg + "\n";
+            log = "[" + TimeFormatUtils.formatTime(System.currentTimeMillis(), TimeFormatUtils.LOG_FORMAT) + "] " + s + tag + " - " + msg + "\n";
         } else {
             log = s + tag + " - " + msg + "\n";
         }
