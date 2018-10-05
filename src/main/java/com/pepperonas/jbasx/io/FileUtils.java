@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2017 Martin Pfeffer
+ *    Copyright (c) 2018 Martin Pfeffer
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 
 package com.pepperonas.jbasx.io;
@@ -41,7 +41,6 @@ public class FileUtils {
 
     private static final int IO_BUFFER_SIZE = 16384;
 
-
     /**
      * Create boolean.
      *
@@ -52,7 +51,6 @@ public class FileUtils {
         return create(absPath, false);
     }
 
-
     /**
      * Create boolean.
      *
@@ -62,16 +60,16 @@ public class FileUtils {
      */
     public static boolean create(String absPath, boolean force) {
         if (TextUtils.isEmpty(absPath)) {
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.w(TAG, "create - Path is empty.");
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.w(TAG, "create - Path is empty.");
+            //            }
             return false;
         }
 
         if (exists(absPath)) {
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.w(TAG, "create - File exists (will not override).");
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.w(TAG, "create - File exists (will not override).");
+            //            }
             return true;
         }
 
@@ -81,15 +79,14 @@ public class FileUtils {
         try {
             File file = new File(absPath);
             boolean success = file.createNewFile();
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.i(TAG, "create - File " + (success ? "successfully created." : "not created."));
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.i(TAG, "create - File " + (success ? "successfully created." : "not created."));
+            //            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
-
 
     /**
      * Mk dirs boolean.
@@ -100,7 +97,6 @@ public class FileUtils {
     public static boolean mkDirs(String absPath) {
         return mkDirs(absPath, false);
     }
-
 
     /**
      * Mk dirs boolean.
@@ -113,9 +109,9 @@ public class FileUtils {
         File file = new File(absPath);
         if (exists(absPath) && !isFolder(absPath)) {
             if (!force) {
-                if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                    Log.w(TAG, "mkDirs - Directory exists (will not override).");
-                }
+                //                if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+                //                    Log.w(TAG, "mkDirs - Directory exists (will not override).");
+                //                }
                 return false;
             } else {
                 delete(file);
@@ -129,7 +125,6 @@ public class FileUtils {
         return false;
     }
 
-
     /**
      * Gets all files.
      *
@@ -139,20 +134,18 @@ public class FileUtils {
     public static List<File> getAllFiles(String dirName) {
         File directory = new File(dirName);
 
-        List<File> resultList = new ArrayList<>();
-
         File[] files = directory.listFiles();
-        resultList.addAll(Arrays.asList(files));
-        for (File file : files) {
-            if (file.isFile()) {
-                System.out.println(file.getAbsolutePath());
-            } else if (file.isDirectory()) {
-                resultList.addAll(getAllFiles(file.getAbsolutePath()));
+        List<File> resultList = null;
+        if (files != null) {
+            resultList = new ArrayList<>(Arrays.asList(files));
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    resultList.addAll(getAllFiles(file.getAbsolutePath()));
+                }
             }
         }
         return resultList;
     }
-
 
     /**
      * Gets all files.
@@ -163,7 +156,6 @@ public class FileUtils {
     public static List<File> getAllFiles(File dir) {
         return getAllFiles(dir.getPath());
     }
-
 
     /**
      * Exists boolean.
@@ -179,7 +171,6 @@ public class FileUtils {
         return exists(file);
     }
 
-
     /**
      * Exists boolean.
      *
@@ -189,7 +180,6 @@ public class FileUtils {
     public static boolean exists(File file) {
         return file != null && file.exists();
     }
-
 
     /**
      * Child of boolean.
@@ -207,7 +197,6 @@ public class FileUtils {
         return childPath.startsWith(parentPath + File.separator);
     }
 
-
     /**
      * Count the number of {@link File} objects inside a directory.
      *
@@ -216,25 +205,24 @@ public class FileUtils {
      */
     public static int childCount(String absPath) {
         if (!exists(absPath)) {
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.w(TAG, "childCount - Path does not exist.");
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.w(TAG, "childCount - Path does not exist.");
+            //            }
             return 0;
         }
         File file = new File(absPath);
         File[] children = file.listFiles();
         if (children == null) {
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.w(TAG, "childCount: 0");
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.w(TAG, "childCount: 0");
+            //            }
             return 0;
         }
-        if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-            Log.i(TAG, "childCount: " + children.length);
-        }
+        //        if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+        //            Log.i(TAG, "childCount: " + children.length);
+        //        }
         return children.length;
     }
-
 
     /**
      * Clean path string.
@@ -244,9 +232,9 @@ public class FileUtils {
      */
     public static String cleanPath(String absPath) {
         if (TextUtils.isEmpty(absPath)) {
-            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-                Log.w(TAG, "cleanPath - Path is empty.");
-            }
+            //            if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+            //                Log.w(TAG, "cleanPath - Path is empty.");
+            //            }
             return absPath;
         }
         try {
@@ -255,12 +243,11 @@ public class FileUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (Jbasx.mLog == Jbasx.LogMode.ALL) {
-            Log.i(TAG, "cleanPath - Path '" + absPath + "' cleaned.");
-        }
+        //        if (Jbasx.mLog == Jbasx.LogMode.ALL) {
+        //            Log.i(TAG, "cleanPath - Path '" + absPath + "' cleaned.");
+        //        }
         return absPath;
     }
-
 
     /**
      * Size long.
@@ -278,7 +265,6 @@ public class FileUtils {
         File file = new File(absPath);
         return size(file);
     }
-
 
     /**
      * Size long.
@@ -311,7 +297,6 @@ public class FileUtils {
         return length;
     }
 
-
     /**
      * Copy boolean.
      *
@@ -322,7 +307,6 @@ public class FileUtils {
     public static boolean copy(File sourceFile, String destPath) {
         return copy(sourceFile, destPath, false);
     }
-
 
     /**
      * Copy boolean.
@@ -387,7 +371,6 @@ public class FileUtils {
         return true;
     }
 
-
     /**
      * Move boolean.
      *
@@ -399,7 +382,6 @@ public class FileUtils {
         return copy(new File(sourcePath), destPath, false) && delete(sourcePath);
     }
 
-
     /**
      * Move boolean.
      *
@@ -410,7 +392,6 @@ public class FileUtils {
     public static boolean move(File sourceFile, String destPath) {
         return copy(sourceFile, destPath, false) && delete(sourceFile);
     }
-
 
     /**
      * Move boolean.
@@ -424,7 +405,6 @@ public class FileUtils {
         return copy(new File(sourcePath), destPath, force) && delete(sourcePath);
     }
 
-
     /**
      * Move boolean.
      *
@@ -436,7 +416,6 @@ public class FileUtils {
     public static boolean move(File sourceFile, String destPath, boolean force) {
         return copy(sourceFile, destPath, force) && delete(sourceFile);
     }
-
 
     /**
      * Delete boolean.
@@ -453,7 +432,6 @@ public class FileUtils {
         return delete(file);
     }
 
-
     /**
      * Delete boolean.
      *
@@ -463,7 +441,6 @@ public class FileUtils {
     public static boolean delete(File file) {
         return exists(file) && file.delete();
     }
-
 
     /**
      * Delete if empty boolean.
@@ -479,7 +456,6 @@ public class FileUtils {
         File file = new File(absPath);
         return deleteIfEmpty(file);
     }
-
 
     /**
      * Delete if empty boolean.
@@ -500,7 +476,6 @@ public class FileUtils {
         }
     }
 
-
     /**
      * Is file boolean.
      *
@@ -512,7 +487,6 @@ public class FileUtils {
         return exists && new File(absPath).isFile();
     }
 
-
     /**
      * Is file boolean.
      *
@@ -522,7 +496,6 @@ public class FileUtils {
     public static boolean isFile(File file) {
         return file != null && file.isFile();
     }
-
 
     /**
      * Is folder boolean.
@@ -539,7 +512,6 @@ public class FileUtils {
         File file = new File(absPath);
         return file.isDirectory();
     }
-
 
     /**
      * Gets name.
@@ -560,7 +532,6 @@ public class FileUtils {
             return getName(file.getAbsolutePath());
         }
     }
-
 
     /**
      * Gets name.
@@ -586,7 +557,6 @@ public class FileUtils {
         return null;
     }
 
-
     /**
      * Gets parent.
      *
@@ -607,7 +577,6 @@ public class FileUtils {
         }
     }
 
-
     /**
      * Gets parent.
      *
@@ -625,7 +594,6 @@ public class FileUtils {
         File file = new File(absPath);
         return getParent(file);
     }
-
 
     /**
      * Gets stem.
@@ -645,7 +613,6 @@ public class FileUtils {
         }
         return getStem(file.getName());
     }
-
 
     /**
      * Gets stem.
@@ -669,7 +636,6 @@ public class FileUtils {
         }
     }
 
-
     /**
      * Gets extension.
      *
@@ -688,7 +654,6 @@ public class FileUtils {
         }
         return getExtension(file.getName());
     }
-
 
     /**
      * Gets extension.
@@ -714,7 +679,6 @@ public class FileUtils {
         return fileName.substring(index + 1);
     }
 
-
     /**
      * Matches extension boolean.
      *
@@ -730,7 +694,6 @@ public class FileUtils {
         }
         return false;
     }
-
 
     /**
      * The type Folder sorter.

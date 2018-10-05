@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2017 Martin Pfeffer
+ *    Copyright (c) 2018 Martin Pfeffer
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
  */
 
 package com.pepperonas.jbasx;
@@ -45,7 +45,6 @@ public class Jbasx {
     private static boolean mTimestamp = true;
     private static String mUid = "";
 
-
     /**
      * Gets unique log id.
      *
@@ -54,7 +53,6 @@ public class Jbasx {
     public static String getUniqueLogId() {
         return mUid;
     }
-
 
     /**
      * Write log boolean.
@@ -65,7 +63,6 @@ public class Jbasx {
         return mFileLog;
     }
 
-
     /**
      * Write log with stamp boolean.
      *
@@ -74,7 +71,6 @@ public class Jbasx {
     public static boolean writeLogWithStamp() {
         return mTimestamp;
     }
-
 
     /**
      * Gets log file name.
@@ -85,7 +81,6 @@ public class Jbasx {
         return mLogFileName;
     }
 
-
     /**
      * Gets log file path.
      *
@@ -95,7 +90,6 @@ public class Jbasx {
         return mLogFilePath;
     }
 
-
     /**
      * The enum Log mode.
      */
@@ -103,16 +97,17 @@ public class Jbasx {
         /**
          * None log mode.
          */
-        NONE(-1), /**
+        NONE(-1),
+        /**
          * Default log mode.
          */
-        DEFAULT(0), /**
+        DEFAULT(0),
+        /**
          * All log mode.
          */
         ALL(3);
 
         private final int mode;
-
 
         /**
          * Instantiates a new Log mode.
@@ -122,12 +117,10 @@ public class Jbasx {
         LogMode(int i) {this.mode = i;}
     }
 
-
     /**
      * The constant mLog.
      */
     public static LogMode mLog = LogMode.DEFAULT;
-
 
     /**
      * The entry point of application.
@@ -138,7 +131,6 @@ public class Jbasx {
         System.out.println(Version.getVersion());
     }
 
-
     /**
      * Set the log behaviour.
      *
@@ -148,7 +140,6 @@ public class Jbasx {
     public static void setLog(LogMode logMode) {
         mLog = logMode;
     }
-
 
     /**
      * Write the log to a text file.
@@ -165,7 +156,6 @@ public class Jbasx {
         mTimestamp = timestamp;
     }
 
-
     /**
      * Sets unique identifier.
      *
@@ -174,7 +164,6 @@ public class Jbasx {
     public static void setUniqueIdentifier(String uniqueIdentifier) {
         mUid = uniqueIdentifier;
     }
-
 
     /**
      * The type Version.
@@ -190,7 +179,6 @@ public class Jbasx {
             return getVersionNumber() + "." + getBuildNumber();
         }
 
-
         /**
          * Gets version number.
          *
@@ -200,7 +188,6 @@ public class Jbasx {
             String content = IoUtils.readFast("pom.xml");
             return content.split("<version\\.number>")[1].split("\n")[0].replace("</version.number>", "");
         }
-
 
         /**
          * Gets build number.
@@ -212,26 +199,25 @@ public class Jbasx {
             return content.split("<build\\.number>")[1].split("\n")[0].replace("</build.number>", "");
         }
 
-
         /**
          * Gets license.
          *
          * @return the license text.
          */
         public static String getLicense() {
-            return "Copyright (c) 2017 Martin Pfeffer\n" +
-                   " \n" +
-                   "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
-                   "you may not use this file except in compliance with the License.\n" +
-                   "You may obtain a copy of the License at\n" +
-                   " \n" +
-                   "     http://www.apache.org/licenses/LICENSE-2.0\n" +
-                   " \n" +
-                   "Unless required by applicable law or agreed to in writing, software\n" +
-                   "distributed under the License is distributed on an \"AS IS\" BASIS,\n" +
-                   "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n" +
-                   "See the License for the specific language governing permissions and\n" +
-                   "limitations under the License.";
+            return "Copyright (c) 2018 Martin Pfeffer\n" +
+                    " \n" +
+                    "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
+                    "you may not use this file except in compliance with the License.\n" +
+                    "You may obtain a copy of the License at\n" +
+                    " \n" +
+                    "     http://www.apache.org/licenses/LICENSE-2.0\n" +
+                    " \n" +
+                    "Unless required by applicable law or agreed to in writing, software\n" +
+                    "distributed under the License is distributed on an \"AS IS\" BASIS,\n" +
+                    "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n" +
+                    "See the License for the specific language governing permissions and\n" +
+                    "limitations under the License.";
         }
     }
 
