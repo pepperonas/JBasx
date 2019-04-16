@@ -267,7 +267,15 @@ public class Log {
         String logPath = Jbasx.getLogFilePath() + File.separator + Jbasx.getLogFileName();
         File logFile = new File(logPath);
         if (!logFile.exists()) {
-            com.pepperonas.jbasx.io.FileUtils.create(logPath);
+            File dir = logFile.getParentFile();
+            if (dir != null && (!dir.exists() || !dir.isDirectory())) {
+                dir.mkdirs();
+            }
+            try {
+                logFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         if (logFile.length() >= LOG_FILE_LEN) {
             resizeLogFile(logFile);
